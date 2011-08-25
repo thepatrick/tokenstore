@@ -1,0 +1,43 @@
+{{#properties}}
+    "page_title": "Token tracker"
+{{/properties}}
+
+<div id="search">
+  <a href="/logout">Logout</a>
+</div>
+<div class="wrapper">
+  <h2>Next token</h2>
+  <h1 class="balance">{{ nextCode }}</h1>
+  <div class="breakdown">
+    <a href="#" id="consume" style="display: none;">I've entered that one</a>,
+    then {{ remaining }} left.
+  </div>
+  <h3><a href="#">Add a new one</a></h3>
+  <ul style="display: none;">
+    <form method="post" action="/deposit">
+      <li><label for="token">code</label><input type="text" name="token"></li>
+    </form>
+  </ul>  
+</div>
+
+<form method="post" action="/consume">
+  <input type="hidden" name="id" value="{{ nextID }}">
+</form>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $('h3 a').click(function(e){
+    if(!$(this).hasClass("expanded")) {
+      $(this).addClass('expanded');
+      $(this).parent().next('ul').show();
+    } else {
+      $(this).removeClass('expanded').parent().next('ul').hide();
+    }
+    e.preventDefault();
+  });
+  $('#consume').click(function(e){
+    e.preventDefault();
+    $('form[action="/consume"]').submit();
+  }).css('display', '');
+});
+</script>

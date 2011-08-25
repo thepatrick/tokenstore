@@ -1,0 +1,5 @@
+node_modules
+boot.sh
+npm-debug.log
+at.js
+public/.DS_Store
