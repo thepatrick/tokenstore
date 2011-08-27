@@ -1,7 +1,7 @@
-MagicHome
-=========
+Token Store
+===========
 
-Controls X10 devices from an iOS device.
+Allows to record tokens (e.g. those found inside soft drink bottles) quickly and easily from your computer or phone (web browser), and then shows you one at a time (you click to tell it you've used them) for easy copying & pasting into a website that is probably very mobile unfriendly.
 
 Notes
 -----
